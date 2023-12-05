@@ -25,44 +25,106 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-                    RowExample()                }
+                    RowExample()
+                    ColumnExample()
+                }
             }
         }
     }
 }
 
 @Composable
+fun ColumnExample() {
+
+    val modifier = Modifier
+        .padding(10.dp)
+        .fillMaxWidth()
+        .height(200.dp)
+        .background(Color.LightGray)
+
+    Column(modifier = modifier, verticalArrangement = Arrangement.Top) {
+        ColumnTextsAllignment()
+    }
+
+    Column(modifier = modifier, verticalArrangement = Arrangement.Bottom) {
+        ColumnTextsAllignment()
+    }
+
+    Column(modifier = modifier, verticalArrangement = Arrangement.Center) {
+        ColumnTextsAllignment()
+    }
+
+    Column(modifier = modifier, verticalArrangement = Arrangement.SpaceEvenly) {
+        ColumnTextsAllignment()
+    }
+
+    Column(modifier = modifier, verticalArrangement = Arrangement.SpaceAround) {
+        ColumnTextsAllignment()
+    }
+
+    Column(modifier = modifier, verticalArrangement = Arrangement.SpaceBetween) {
+        ColumnTextsAllignment()
+    }
+}
+
+@Composable
+fun ColumnTextsAllignment() {
+
+    Text(
+        text = "Column1", modifier = Modifier
+            .background(Color(0xFF8BC34A))
+            .padding(4.dp)
+    )
+
+    Spacer(modifier = Modifier.padding(all = 10.dp))
+
+    Text(
+        text = "Column2", modifier = Modifier
+            .background(Color(0xFF9CCC65))
+            .padding(4.dp)
+    )
+
+    Spacer(modifier = Modifier.padding(all = 10.dp))
+
+    Text(
+        text = "Column3", modifier = Modifier
+            .background(Color(0xFFAED581))
+            .padding(4.dp)
+    )
+}
+
+@Composable
 fun RowExample() {
 
     Row(modifier = Modifier.fillMaxWidth().padding(all = 10.dp), horizontalArrangement = Arrangement.Start) {
-        RowTexts()
+        RowTextsAllignment()
     }
 
     Row(modifier = Modifier.fillMaxWidth().padding(all = 10.dp), horizontalArrangement = Arrangement.End) {
-        RowTexts()
+        RowTextsAllignment()
     }
 
     Row(modifier = Modifier.fillMaxWidth().padding(all = 10.dp), horizontalArrangement = Arrangement.Center) {
-        RowTexts()
+        RowTextsAllignment()
     }
 
     Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceEvenly) {
-        RowTexts()
+        RowTextsAllignment()
     }
 
     Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
-        RowTexts()
+        RowTextsAllignment()
     }
 
     Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceAround) {
-        RowTexts()
+        RowTextsAllignment()
     }
 
 }
 
 
 @Composable
-fun RowTexts() {
+fun RowTextsAllignment() {
     Text(
         text = "Row1", modifier = Modifier
             .background(Color(0xFFFF9800))

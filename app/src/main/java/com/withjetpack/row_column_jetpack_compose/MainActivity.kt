@@ -33,9 +33,31 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun RowExample() {
+
     Row(modifier = Modifier.fillMaxWidth().padding(all = 10.dp), horizontalArrangement = Arrangement.Start) {
         RowTexts()
     }
+
+    Row(modifier = Modifier.fillMaxWidth().padding(all = 10.dp), horizontalArrangement = Arrangement.End) {
+        RowTexts()
+    }
+
+    Row(modifier = Modifier.fillMaxWidth().padding(all = 10.dp), horizontalArrangement = Arrangement.Center) {
+        RowTexts()
+    }
+
+    Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceEvenly) {
+        RowTexts()
+    }
+
+    Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
+        RowTexts()
+    }
+
+    Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceAround) {
+        RowTexts()
+    }
+
 }
 
 
